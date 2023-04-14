@@ -1,0 +1,130 @@
+<!-- Writing code make it sticks in your memory -->
+<!-- DOCTYPE tells the browser this document uses HTML -->
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head element is for things not visible in the browser window -->
+  <head>
+    <!-- Metadata: data about the data -->
+    <meta charset="UTF-8" />
+    <title>The basic language of the web: HTML</title>
+  </head>
+
+  <!-- Body is for the elements visible in the page -->
+  <!-- Semantic HTML: think about what an element means and what it stands for, not just visually -->
+  <!-- Search Engine Optimization, Acessibility (screen readers) -->
+  <body>
+    <!-- Top part of the document/small unit -->
+    <header>
+      <!-- Headings: breakup big blocks of text in more logic sections, titles -->
+      <!-- Only one h1 element per page -->
+      <h1>📘 The Code Magazine</h1>
+
+      <!-- Navigation: container -> group elements together -->
+      <nav>
+        <!-- HyperLink to an page HTML inside: specify the name of file we want to go to -->
+        <!-- href attribute makes anchor element a link. # doesn't point anywhere (placeholder) -->
+        <a href="blog.html">Blog</a>
+        <a href="#">Challenges</a>
+        <a href="#">Flexbox</a>
+        <a href="#">CSS Grid</a>
+      </nav>
+    </header>
+
+    <!-- Common element (container) for blog post -->
+    <article>
+      <header>
+        <h2>The basic language of the web: HTML</h2>
+
+        <img
+          src="img/laura-jones.jpg"
+          alt="Headshot of Laura Jones"
+          width="50"
+          height="50"
+        />
+
+        <!-- Use strong instead of b, it's more semantic (important text) -->
+        <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+
+        <!-- Special element, doesn't have content -> no closing tag -->
+        <!-- Attributes: pieces of data to describe elements -->
+        <!-- alt (alternative text): describe what the image is about -->
+        <img
+          src="img/post-img.jpg"
+          alt="HTML code on a screen"
+          width="500"
+          height="200"
+        />
+      </header>
+
+      <!-- Use em instead of i (italic), means emphasys text -->
+      <p>
+        All modern websites and web applications are built using three
+        <em>fundamental</em>
+        technologies: HTML, CSS and JavaScript. These are the languages of the
+        web.
+      </p>
+      <p>
+        In this post, let's focus on HTML. We will learn what HTML is all about,
+        and why you too should learn it.
+      </p>
+
+      <h3>What is HTML?</h3>
+      <p>
+        HTML stands for <strong>H</strong>yper<strong>T</strong>ext
+        <strong>M</strong>arkup <strong>L</strong>anguage. It's a markup
+        language that web developers use to structure and describe the content
+        of a webpage (not a programming language).
+      </p>
+      <p>
+        HTML consists of elements that describe different types of content:
+        paragraphs, links, headings, images, video, etc. Web browsers understand
+        HTML and render HTML code as websites.
+      </p>
+      <p>In HTML, each element is made up of 3 parts:</p>
+
+      <!-- Each element has a different meaning and we use these elements to structure our content -->
+      <!-- Importance of wrapping pieces of content in elements to give them some meaning -->
+      <!-- Ordered list and list items (parent and child elements) -->
+      <ol>
+        <li>The opening tag</li>
+        <li>The closing tag</li>
+        <li>The actual element</li>
+      </ol>
+
+      <!-- HyperLink to a page outside, a stands for anchor -->
+      <!-- URL of a page in href attribute -->
+      <!-- Open the link in a new tab (_blank) -->
+      <p>
+        You can learn more at the
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+          target="_blank"
+          >MDN Web Docs</a
+        >.
+      </p>
+
+      <h3>Why should you learn HTML?</h3>
+      <p>
+        There are countless reasons for learning the fundamental language of the
+        web. Here are 5 of them:
+      </p>
+
+      <!-- Un-ordered list and list items -->
+      <ul>
+        <li>To be able to use the fundamental web dev language</li>
+        <li>
+          To hand-craft beautiful websites instead of relying on tools like
+          Worpress or Wix
+        </li>
+        <li>To build web applications</li>
+        <li>To impress friends</li>
+        <li>To have fun 😃</li>
+      </ul>
+
+      <p>Hopefully you learned something new here. See you next time!</p>
+    </article>
+
+    <!-- HTML entity: &copy; -->
+    <footer>Copyright &copy; 2027 by The Code Magazine.</footer>
+  </body>
+</html>
