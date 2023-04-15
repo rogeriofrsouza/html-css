@@ -1,0 +1,148 @@
+/*
+  CSS Rules: selector + declaration block
+  Declaration: property + value
+  Keep typing the property names and they will get into your brain
+*/
+
+/* Combining selectors into a list-selector avoids repeating the same declaration on multiple rules */
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444; /* Grey color: same values on all 3 channels (shorthand) */
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad; /* RGB channels in hexadecimal format */
+}
+
+/* h1 doesn't need to be the biggest font-size. It's all about semantics */
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* 
+  Selects all p elements on the page 
+  line-height is related to font-size
+  strong, em: inheritance in font and others properties
+*/
+p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+li {
+  font-size: 20px;
+}
+
+/* 
+  Descendant selector: p is a child of footer
+  Encoding HTML structure into CSS makes the code hard to mantain
+
+  footer p {
+    font-size: 18px;
+  }
+
+  article header p {
+    font-style: italic;
+  }
+*/
+
+/* Id selector: not allowed to repeat id names */
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+.related {
+  list-style: none;
+}
+
+/*
+  Class selector: allowed to repeat classes
+  Convention: multiple words are separeted by - (kebab case)
+*/
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+/* Element selector: name of HTML element */
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad; /* Shorthand property: define multiple properties */
+  border-bottom: 5px solid #1098ad;
+}
+
+/*
+  Pseudo-class: select all li elements that are first child of their parents container
+  Doesn't work really well on multiple mixed elements inside a container
+*/
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* 
+  Odds and evens: useful when styling tables with alternating background colors
+  
+  li:nth-child(even) {
+    color: red;
+  }
+*/
+
+/* Misconception: this won't work! */
+article p:first-child {
+  color: red;
+}
+
+/* Styling links states (LVHA): targets elements with a href attribute */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad; /* Same color as link pseudo-class */
+}
+
+a:hover {
+  color: orangered;
+  text-decoration: underline orangered; /* Shorthand property */
+}
+
+a:active {
+  font-weight: bold;
+}
