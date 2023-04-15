@@ -4,26 +4,34 @@
   Keep typing the property names and they will get into your brain
 */
 
+/*
+  Universal selector: selects all elements on the page (lowest priority)
+  Useful for properties which doesn't get inherited. No inheritance involved
+  * {
+  }
+*/
+
+/* 
+  Parent element of all the other elements in HTML
+  Certain properties and their values get inherited by all children and can be easily overwritten
+*/
+body {
+  color: #444; /* Grey color: same values on all 3 channels (shorthand) */
+  font-family: sans-serif;
+
+  border-top: 5px solid #1098ad; /* Not all properties get inherited, mostly ones related to text */
+}
+
 /* Combining selectors into a list-selector avoids repeating the same declaration on multiple rules */
 h1,
 h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
-  color: #444; /* Grey color: same values on all 3 channels (shorthand) */
-}
-
-h1,
-h2,
 h3 {
-  color: #1098ad; /* RGB channels in hexadecimal format */
+  color: #1098ad; /* Overriding inherited styles */
 }
 
 /* h1 doesn't need to be the biggest font-size. It's all about semantics */
 h1 {
-  font-size: 26px;
+  font-size: 26px; /* Overriding inherited styles */
   text-transform: uppercase;
   font-style: italic;
 }
@@ -93,7 +101,7 @@ li {
 }
 
 .main-header {
-  background-color: #f7f7f7;
+  background-color: #f7f7f7; /* RGB channels in hexadecimal format */
 }
 
 /* Element selector: name of HTML element */
@@ -145,4 +153,31 @@ a:hover {
 
 a:active {
   font-weight: bold;
+}
+
+/*
+  Resolving conflicts
+  Id selector has an higher priority -> Selector specificity
+  Same priority: last rule applies
+  Avoid using important keyword, write simpler selectors
+
+  #copyright {
+    color: red;
+  }
+
+  .copyright {
+    color: blue;
+  }
+
+  .text {
+    color: yellow;
+  }
+
+  footer p {
+    color: green !important;
+  }
+*/
+
+nav {
+  font-size: 18px;
 }
