@@ -13,6 +13,8 @@
   padding: 0;
 }
 
+/* ===== PAGE SECTIONS ========== */
+
 /* 
   Parent element of all the other elements in HTML
   Certain properties and their values get inherited by all children and can be easily overwritten
@@ -21,13 +23,7 @@ body {
   color: #444; /* Grey color: same values on all 3 channels (shorthand) */
   font-family: sans-serif;
   border-top: 5px solid #1098ad; /* Not all properties get inherited, mostly ones related to text */
-}
-
-/* Combining selectors into a list-selector avoids repeating the same declaration on multiple rules */
-h1,
-h2,
-h3 {
-  color: #1098ad; /* Overriding inherited styles */
+  position: relative;
 }
 
 /* Centering the content of the page */
@@ -40,14 +36,7 @@ h3 {
   background-color: #f7f7f7; /* RGB channels in hexadecimal format */
   padding: 20px 40px;
   margin-bottom: 60px; /* Vertical spacing: stick to bottom or top margins, do not mix them */
-  height: 80px; /* Box model: real height is 80px + padding values */
-}
-
-/* h1 doesn't need to be the biggest font-size. It's all about semantics */
-h1 {
-  font-size: 26px;
-  text-transform: uppercase;
-  font-style: italic;
+  /*height: 80px; //Box model: real height is 80px + padding values */
 }
 
 nav {
@@ -62,9 +51,47 @@ article {
   margin-bottom: 40px;
 }
 
+/* Element selector: name of HTML element */
+aside {
+  background-color: #f7f7f7; /* Requires some padding */
+  border-top: 5px solid #1098ad; /* Shorthand property: define multiple properties */
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
+}
+
+/* ===== SMALLER ELEMENTS ========== */
+
+/* Combining selectors into a list-selector avoids repeating the same declaration on multiple rules */
+h1,
+h2,
+h3 {
+  color: #1098ad; /* Overriding inherited styles */
+}
+
+/* h1 doesn't need to be the biggest font-size. It's all about semantics */
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
 h2 {
   font-size: 40px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px; /* Collapsing margins: usually the larger is visible */
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /* Id selector: not allowed to repeat id names */
@@ -73,16 +100,56 @@ h2 {
   font-size: 18px;
 }
 
-/* Size images in CSS, avoid doing this in HTML */
+#copyright {
+  font-size: 16px;
+}
+
+/* Styling links states (LVHA): targets elements with a href attribute */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad; /* Same color as link pseudo-class */
+}
+
+a:hover {
+  color: orangered;
+  text-decoration: underline orangered; /* Shorthand property */
+}
+
+a:active {
+  font-weight: bold;
+}
+
+/*
+  Size images in CSS, avoid doing this in HTML
+  Images are inline-block elements (vertical spacing, height, width)
+*/
 .post-img {
   width: 100%; /* Porcentage of the parent's width */
   height: auto; /* Keeps original aspect ratio, only works if height is specified in HTML */
 }
 
-h3 {
-  font-size: 30px;
-  margin-bottom: 20px;
-  margin-top: 40px; /* Collapsing margins: usually the larger is visible */
+nav a:link {
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block; /* Box model is applied */
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  position: absolute; /* Absolute position of the element in relation to the parent element (body -> relative) */
+  bottom: 50px;
+  right: 50px;
 }
 
 /* 
@@ -94,6 +161,36 @@ p {
   font-size: 22px;
   line-height: 1.5;
   margin-bottom: 15px;
+}
+
+/* 
+  Adjacent sybling selector: +
+
+  h3 + p::first-line {
+    color: red;
+  }
+*/
+
+/* Pseudo-element: not an actual element in HTML but can be selected with CSS */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* Pseudo-elements are inline elements */
+h2::after {
+  content: "TOP"; /* Mandatory property: can be an empty string */
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+
+  display: inline-block;
+  padding: 5px 10px;
+  color: #444;
+
+  position: absolute;
+  top: -10px;
+  right: -25px;
 }
 
 ol,
@@ -133,21 +230,6 @@ article p:first-child {
   color: red;
 }
 
-/* Element selector: name of HTML element */
-aside {
-  background-color: #f7f7f7; /* Requires some padding */
-  border-top: 5px solid #1098ad; /* Shorthand property: define multiple properties */
-  border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
-}
-
-h4 {
-  font-size: 20px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .related {
   list-style: none;
 }
@@ -158,25 +240,6 @@ h4 {
 */
 .related-author {
   font-size: 18px;
-  font-weight: bold;
-}
-
-/* Styling links states (LVHA): targets elements with a href attribute */
-a:link {
-  color: #1098ad;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #1098ad; /* Same color as link pseudo-class */
-}
-
-a:hover {
-  color: orangered;
-  text-decoration: underline orangered; /* Shorthand property */
-}
-
-a:active {
   font-weight: bold;
 }
 
@@ -204,7 +267,7 @@ a:active {
 */
 
 /* 
-  Descendant selector: p is a child of footer
+  Descending selector: p is a child of footer
   Encoding HTML structure into CSS makes the code hard to mantain
 
   footer p {
@@ -215,7 +278,3 @@ a:active {
     font-style: italic;
   }
 */
-
-#copyright {
-  font-size: 16px;
-}
