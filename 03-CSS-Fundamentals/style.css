@@ -134,9 +134,9 @@ a:active {
 }
 
 nav a:link {
+  display: inline-block; /* Box model is applied */
   margin-right: 30px;
   margin-top: 10px;
-  display: inline-block; /* Box model is applied */
 }
 
 nav a:link:last-child {
@@ -172,7 +172,7 @@ p {
   }
 */
 
-/* Pseudo-element: not an actual element in HTML but can be selected with CSS */
+/* Pseudo-element: not an actual element in HTML but it can be selected with CSS */
 h1::first-letter {
   font-style: normal;
   margin-right: 5px;
@@ -247,7 +247,7 @@ article p:first-child {
 /*
   Resolving conflicts
   Id selector has an higher priority -> Selector specificity
-  Same priority: last rule applies
+  Same priority: last CSS rule applies
   Avoid using important keyword, write simpler selectors
 
   #copyright {

@@ -1,7 +1,9 @@
 * {
-  /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+
+  /* Default behavior of box model (content-box): final element width */
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
@@ -14,17 +16,12 @@ body {
 }
 
 .container {
-  width: 800px;
-  /* margin-left: auto;
-  margin-right: auto; */
+  width: 1200px;
   margin: 0 auto;
 }
 
 .main-header {
   background-color: #f7f7f7;
-  /* padding: 20px;
-  padding-left: 40px;
-  padding-right: 40px; */
   padding: 20px 40px;
   margin-bottom: 60px;
   /* height: 80px; */
@@ -48,10 +45,7 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  /* padding-top: 50px;
-  padding-bottom: 50px; */
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 
 /* SMALLER ELEMENTS */
@@ -82,6 +76,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -106,14 +101,6 @@ li:last-child {
   margin-bottom: 0;
 }
 
-/* footer p {
-  font-size: 16px;
-} */
-
-/* article header p {
-  font-style: italic;
-} */
-
 #author {
   font-style: italic;
   font-size: 18px;
@@ -128,21 +115,10 @@ li:last-child {
   font-weight: bold;
 }
 
-/* ul {
-  list-style: none;
-} */
-
 .related {
   list-style: none;
+  margin-left: 0;
 }
-
-body {
-  /* background-color: orangered; */
-}
-
-/* .first-li {
-  font-weight: bold;
-} */
 
 li:first-child {
   font-weight: bold;
@@ -150,10 +126,6 @@ li:first-child {
 
 li:last-child {
   font-style: italic;
-}
-
-li:nth-child(even) {
-  /* color: red; */
 }
 
 /* Misconception: this won't work! */
@@ -190,12 +162,6 @@ a:active {
 }
 
 nav a:link {
-  /* background-color: orangered;
-  margin: 20px;
-  padding: 20px;
-
-  display: block; */
-
   margin-right: 30px;
   margin-top: 10px;
   display: inline-block;
@@ -211,8 +177,6 @@ button {
   cursor: pointer;
 
   position: absolute;
-  /* top: 50px;
-  left: 50px; */
   bottom: 50px;
   right: 50px;
 }
@@ -222,12 +186,7 @@ h1::first-letter {
   margin-right: 5px;
 }
 
-h3 + p::first-line {
-  /* color: red; */
-}
-
 h2 {
-  /* background-color: orange; */
   position: relative;
 }
 
@@ -244,24 +203,68 @@ h2::before {
   right: -25px;
 }
 
-/* Resolving conflicts */
-/* #copyright {
-  color: red;
+/* 
+  Resolving conflicts
+  #copyright {
+    color: red;
+  }
+
+  .copyright {
+    color: blue;
+  }
+
+  .text {
+    color: yellow;
+  }
+
+  footer p {
+    color: green !important;
+  }
+*/
+
+/* FLOATS */
+/* Building float layouts is outdated */
+/* Impacts surrounding elements and containuer will not adjust its height */
+.author-img {
+  float: left; /* img is taken out of page flow, as if the element was removed */
+  margin-bottom: 20px;
 }
 
-.copyright {
-  color: blue;
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
-.text {
-  color: yellow;
+h1 {
+  float: left; /* Phenomena: collapsing elements */
 }
 
-footer p {
-  color: green !important;
-} */
+nav {
+  float: right;
+}
 
-/* nav a:link,
-nav p {
-  font-size: 18px;
-} */
+.clear {
+  clear: both; /* Clearing floats and fixing collapsing elements (outdated technique) */
+}
+
+/* Clearfix hack: creates an element, which is the last child of the container */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+article {
+  width: 825px;
+  float: left;
+}
+
+aside {
+  width: 300px;
+  float: right;
+}
+
+footer {
+  clear: both; /* Do not float around the other ones */
+}

@@ -20,7 +20,7 @@ body {
 .product {
   border: 4px solid #000;
   width: 825px;
-  margin: 50px auto;
+  margin: 48px auto;
   position: relative;
 }
 
@@ -28,7 +28,7 @@ body {
   text-align: center;
   font-size: 22px;
   background-color: #f7f7f7;
-  padding: 15px;
+  padding: 16px;
 }
 
 /* Pseudo-element */
@@ -82,8 +82,8 @@ body {
 
 .color {
   display: inline-block;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   margin-right: 12px;
   background-color: #0a0a0a;
 }
