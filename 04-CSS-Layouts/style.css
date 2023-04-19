@@ -163,7 +163,6 @@ a:active {
 
 nav a:link {
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -203,8 +202,65 @@ h2::before {
   right: -25px;
 }
 
+/* FLEXBOX */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.author {
+  margin-bottom: 0;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.related-link:link {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.related-author {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start; /* Default value: stretch all elements as far as they can */
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+article {
+  flex: 1; /* Allows flexbox to fill the available space */
+  margin-bottom: 0;
+}
+
+aside {
+  flex: 0 0 300px;
+}
+
 /* 
-  Resolving conflicts
+  // Resolving conflicts
   #copyright {
     color: red;
   }
@@ -222,49 +278,51 @@ h2::before {
   }
 */
 
-/* FLOATS */
-/* Building float layouts is outdated */
-/* Impacts surrounding elements and containuer will not adjust its height */
-.author-img {
-  float: left; /* img is taken out of page flow, as if the element was removed */
-  margin-bottom: 20px;
-}
+/* 
+  // FLOATS
+  // Building float layouts is outdated
+  // Impacts surrounding elements and containuer will not adjust its height
+  .author-img {
+    float: left; // img is taken out of page flow, as if the element was removed
+    margin-bottom: 20px;
+  }
 
-.author {
-  float: left;
-  margin-top: 10px;
-  margin-left: 20px;
-}
+  .author {
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
 
-h1 {
-  float: left; /* Phenomena: collapsing elements */
-}
+  h1 {
+    float: left; // Phenomena: collapsing elements
+  }
 
-nav {
-  float: right;
-}
+  nav {
+    float: right;
+  }
 
-.clear {
-  clear: both; /* Clearing floats and fixing collapsing elements (outdated technique) */
-}
+  .clear {
+    clear: both; // Clearing floats and fixing collapsing elements (outdated technique)
+  }
 
-/* Clearfix hack: creates an element, which is the last child of the container */
-.clearfix::after {
-  clear: both;
-  content: "";
-  display: block;
-}
+  // Clearfix hack: creates an element, which is the last child of the container
+  .clearfix::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
 
-article {
-  width: 825px;
-  float: left;
-}
+  article {
+    width: 825px;
+    float: left;
+  }
 
-aside {
-  width: 300px;
-  float: right;
-}
+  aside {
+    width: 300px;
+    float: right;
+  }
 
-footer {
-  clear: both; /* Do not float around the other ones */
-}
+  footer {
+    clear: both; // Do not float around the other ones
+  }
+*/

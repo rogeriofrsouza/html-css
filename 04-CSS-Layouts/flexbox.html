@@ -6,45 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flexbox</title>
     <style>
-      .el--1 {
-        background-color: blueviolet;
-      }
-      .el--2 {
-        background-color: orangered;
-      }
-      .el--3 {
-        background-color: green;
-        height: 150px;
-      }
-      .el--4 {
-        background-color: goldenrod;
-      }
-      .el--5 {
-        background-color: palevioletred;
-      }
-      .el--6 {
-        background-color: steelblue;
-      }
-      .el--7 {
-        background-color: yellow;
-      }
-      .el--8 {
-        background-color: crimson;
-      }
-
       .container {
         /* STARTER */
         font-family: sans-serif;
         background-color: #ddd;
-        font-size: 40px;
+        font-size: 24px;
         margin: 40px;
 
         /* FLEXBOX */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Spacing between elements */
+      }
+
+      .el {
+        /* 
+          DEFAULTS
+          flex-grow: 0; // Element allowed to grow in the space available
+          flex-shrink: 1; // Flexbox is allowed to shrink items to fit the container
+          flex-basis: auto; // Used instead of the width property. Not rigid, based on content
+        */
+
+        flex: 1; /* Always use flex (shorthand) -> Best practice */
+      }
+
+      .el--1 {
+        background-color: blueviolet;
+        align-self: flex-start; /* Overrides align-items in flex-container */
+      }
+
+      .el--2 {
+        background-color: orangered;
+      }
+
+      .el--3 {
+        background-color: green;
+        height: 150px;
+      }
+
+      .el--4 {
+        background-color: goldenrod;
+      }
+
+      .el--5 {
+        background-color: palevioletred;
+        align-self: stretch; /* Default */
+        order: 1;
+      }
+
+      .el--6 {
+        background-color: steelblue;
+        order: -1; /* By default every flex-item is 0 */
+      }
+
+      .el--7 {
+        background-color: yellow;
+      }
+
+      .el--8 {
+        background-color: crimson;
       }
     </style>
   </head>
   <body>
+    <!-- Flex container: takes the height of the highest element -->
     <div class="container">
+      <!-- Flex items: child elements of the flex container -->
       <div class="el el--1">HTML</div>
       <div class="el el--2">and</div>
       <div class="el el--3">CSS</div>
