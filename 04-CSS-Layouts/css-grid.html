@@ -6,75 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Grid</title>
     <style>
-      .el--1 {
-        background-color: blueviolet;
-      }
-      .el--2 {
-        background-color: orangered;
-      }
-      .el--3 {
-        background-color: green;
-        height: 150px;
-      }
-      .el--4 {
-        background-color: goldenrod;
-      }
-      .el--5 {
-        background-color: palevioletred;
-      }
-      .el--6 {
-        background-color: steelblue;
-      }
-      .el--7 {
-        background-color: yellow;
-      }
-      .el--8 {
-        background-color: crimson;
-      }
-
       .container--1 {
         /* STARTER */
         font-family: sans-serif;
         background-color: #ddd;
-        font-size: 40px;
+        font-size: 32px;
         margin: 40px;
+        /* height: 500px; */
 
-        /* CSS GRID */
+        /*
+          CSS GRID
+          Rows are created to acomodate all the content
+          fr (fraction): new flexible unit, fills up remaining space (most used in columns)
+          Explicit grid rows and columns
+        */
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr auto; */
+        /* grid-template-rows: 300px 200px; */
+
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+
+        gap: 40px 20px; /* Shorthand: only way to define space between grid items */
       }
 
       .container--2 {
         /* STARTER */
         font-family: sans-serif;
         background-color: black;
-        font-size: 40px;
-        margin: 100px;
+        font-size: 32px;
+        margin: 40px;
 
-        width: 1000px;
+        width: 700px;
         height: 600px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        gap: 50px;
+
+        /* Aligning grid tracks inside the grid container: distributing empty space */
+        justify-content: center; /* align row tracks (row-axis) */
+        align-content: center; /* align column tracks (column-axis) */
+
+        /* Aligning items inside cells: moving items around */
+        justify-items: center; /* Horizontally */
+        align-items: center; /* Vertically */
+      }
+
+      .el--1 {
+        background-color: blueviolet;
+      }
+
+      .el--2 {
+        background-color: orangered;
+
+        /* grid-column: 1 / 4; // Shorthand for grid-column-start and grid-column-end */
+        /* grid-column: 1 / span 4; // Spans across multiple cells */
+
+        grid-column: 1 / -1; /* Spans all the way to the end */
+        grid-row: 2; /* Second value can be omitted if it's just one more than the first */
+      }
+
+      .el--3 {
+        background-color: green;
+        height: 150px; /* The elements in the row will stretch (default) to this height */
+
+        align-self: end; /* Overrides align-items property */
+        justify-self: end; /* Overrides justify-items property */
+      }
+
+      .el--4 {
+        background-color: goldenrod;
+      }
+
+      .el--5 {
+        background-color: palevioletred;
+      }
+
+      .el--6 {
+        background-color: steelblue;
+      }
+
+      .el--7 {
+        background-color: yellow;
+      }
+
+      .el--8 {
+        background-color: crimson;
+        grid-column: 2 / 3; /* Start at 2 and end at 3 */
+        grid-row: 1 / -1;
       }
     </style>
   </head>
   <body>
+    <!-- Grid container -->
     <div class="container--1">
+      <!-- Grid items -->
       <div class="el el--1">(1) HTML</div>
       <div class="el el--2">(2) and</div>
       <div class="el el--3">(3) CSS</div>
       <div class="el el--4">(4) are</div>
       <div class="el el--5">(5) amazing</div>
       <div class="el el--6">(6) languages</div>
-      <div class="el el--7">(7) to</div>
+      <!-- <div class="el el--7">(7) to</div> -->
       <div class="el el--8">(8) learn</div>
     </div>
 
     <div class="container--2">
       <div class="el el--1">(1)</div>
+      <!-- <div class="el el--2">(2)</div> -->
       <div class="el el--3">(3)</div>
       <div class="el el--4">(4)</div>
       <div class="el el--5">(5)</div>
       <div class="el el--6">(6)</div>
       <div class="el el--7">(7)</div>
+      <!-- <div class="el el--8">(8)</div> -->
     </div>
   </body>
 </html>
