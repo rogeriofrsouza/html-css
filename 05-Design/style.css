@@ -1,9 +1,12 @@
 /*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+  SPACING SYSTEM (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+  FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+  type-scale.com
+  Establish hierarchy between headings/pieces of text
 */
 
 * {
@@ -13,10 +16,16 @@ FONT SIZE SYSTEM (px)
 }
 
 /* ------------------------ */
-/* GENERAL STYLES */
+/* GENERAL STYLES (reusable) */
 /* ------------------------ */
 body {
-  font-family: sans-serif;
+  /* 
+    Good practice: use quotes
+    Comma means priority for 'Inter'
+    Property inherited by all elements
+    Small differences make all difference for a good design
+  */
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -25,12 +34,14 @@ body {
 }
 
 header,
-section {
+section,
+h2 {
   margin-bottom: 48px;
 }
 
 h2 {
-  margin-bottom: 48px;
+  font-size: 36px;
+  letter-spacing: -0.5px;
 }
 
 .grid-3-cols {
@@ -57,10 +68,15 @@ header {
 
 h1 {
   margin-bottom: 24px;
+  font-size: 44px;
+  line-height: 1.1; /* For big text go below 1.5, adjust on Inspector */
+  letter-spacing: -1px; /* Makes big text look more natural */
 }
 
 .header-text {
   margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 1.7; /* For small text go above 1.5 */
 }
 
 img {
@@ -73,9 +89,12 @@ img {
 
 .features-title {
   margin-bottom: 16px;
+  font-size: 20px;
 }
 
 .features-text {
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 /* TESTIMONIAL */
@@ -89,11 +108,16 @@ img {
 
 .testimonial-box h2 {
   margin-bottom: 24px;
+  font-size: 24px;
 }
 
 .testimonial-text {
   font-style: italic;
   margin-bottom: 24px;
+
+  /* "Normal text" */
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 /* CHAIRS */
@@ -103,6 +127,7 @@ img {
 
 h3 {
   margin-bottom: 24px;
+  font-size: 20px;
 }
 
 .chair-details {
@@ -127,8 +152,10 @@ h3 {
 .chair-price {
   display: flex;
   justify-content: space-between;
+  font-size: 20px;
 }
 
 footer {
   margin-bottom: 48px;
+  font-size: 14px;
 }
