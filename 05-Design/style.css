@@ -2,11 +2,12 @@
   SPACING SYSTEM (px)
   2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
-  FONT SIZE SYSTEM (px)
+  FONT SIZE SYSTEM (px) - Establish hierarchy between headings/pieces of text
   10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-  type-scale.com
-  Establish hierarchy between headings/pieces of text
+  COLOR SYSTEM
+  MAIN: #087f5b
+  GREY: #343a40
 */
 
 * {
@@ -26,6 +27,8 @@ body {
     Small differences make all difference for a good design
   */
   font-family: "Inter", sans-serif;
+  color: #343a40;
+  border-bottom: 8px solid #087f5b;
 }
 
 .container {
@@ -48,6 +51,36 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 80px;
+}
+
+/* 
+  Not a button element (doesn't do anything), it's a link that leads somewhere 
+  Check contrast between background color and text color
+*/
+.btn:link,
+.btn:visited {
+  background-color: #087f5b;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase; /* Common in buttons */
+  font-weight: 500;
+  display: inline-block;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #099268;
+}
+
+/* 2 dashes (--) isn't a hard rule */
+.btn--big {
+  font-size: 18px;
+  padding: 16px 32px;
+}
+
+.btn--small {
+  font-size: 14px;
+  padding: 8px 12px;
 }
 
 /* ------------------------ */
@@ -99,6 +132,10 @@ img {
 
 /* TESTIMONIAL */
 .testimonial-section {
+  /* Accent one entire section */
+  background-color: #087f5b;
+  color: #fff;
+  padding: 24px;
 }
 
 .testimonial-box {
@@ -158,4 +195,5 @@ h3 {
 footer {
   margin-bottom: 48px;
   font-size: 14px;
+  color: #495057;
 }
