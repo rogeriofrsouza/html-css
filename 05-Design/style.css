@@ -104,6 +104,8 @@ h1 {
   font-size: 44px;
   line-height: 1.1; /* For big text go below 1.5, adjust on Inspector */
   letter-spacing: -1px; /* Makes big text look more natural */
+
+  /* text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); // Useful for texts on top of images */
 }
 
 .header-text {
@@ -162,6 +164,15 @@ img {
 }
 
 /* CHAIRS */
+.chair {
+  /* 
+    Horizontal offset | vertical | blur | radius (scale the box-shadow up) | color (0.1 max) 
+    UI design: light source comes from the top (no offset to the side)
+    Shadow should look natural
+  */
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
 .chair-box {
   padding: 24px;
 }
