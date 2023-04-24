@@ -53,6 +53,11 @@ h2 {
   column-gap: 80px;
 }
 
+img {
+  width: 100%;
+  border-radius: 8px; /* Typeface is boxy/squared */
+}
+
 /* 
   Not a button element (doesn't do anything), it's a link that leads somewhere 
   Check contrast between background color and text color
@@ -65,6 +70,12 @@ h2 {
   text-transform: uppercase; /* Common in buttons */
   font-weight: 500;
   display: inline-block;
+
+  /* 
+    Round: 50% only works for square elements
+    For rectangles just specify a value >= element height
+  */
+  border-radius: 100px;
 }
 
 .btn:hover,
@@ -114,10 +125,6 @@ h1 {
   line-height: 1.7; /* For small text go above 1.5 */
 }
 
-img {
-  width: 100%;
-}
-
 /* FEATURES */
 .features-icon {
   stroke: #087f5b; /* Color */
@@ -142,6 +149,7 @@ img {
   background-color: #087f5b;
   color: #fff;
   padding: 24px;
+  border-radius: 8px;
 }
 
 .testimonial-box {
@@ -171,6 +179,12 @@ img {
     Shadow should look natural
   */
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.chair img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .chair-box {
