@@ -118,6 +118,10 @@ img {
 
 /* FEATURES */
 .features-icon {
+  stroke: #087f5b; /* Color */
+  width: 32px; /* Designed to be used in 24px */
+  height: 32px;
+  margin-bottom: 16px;
 }
 
 .features-title {
@@ -184,6 +188,9 @@ h3 {
 }
 
 .chair-icon {
+  stroke: #087f5b; /* Style the color of an outline icon. For solid icon use 'fill' */
+  width: 24px;
+  height: 24px;
 }
 
 .chair-price {
