@@ -1,5 +1,5 @@
 /*
-  SPACING SYSTEM (px)
+  SPACING SYSTEM (px) - Multiples of 16
   2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
   FONT SIZE SYSTEM (px) - Establish hierarchy between headings/pieces of text
@@ -37,12 +37,12 @@ body {
 }
 
 header,
-section,
-h2 {
-  margin-bottom: 48px;
+section {
+  margin-bottom: 96px; /* Add a ton of whitespace */
 }
 
 h2 {
+  margin-bottom: 48px;
   font-size: 36px;
   letter-spacing: -0.5px;
 }
@@ -103,7 +103,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 80px;
-  margin-top: 48px;
+  margin-top: 64px;
 }
 
 .header-text-box {
@@ -111,7 +111,7 @@ header {
 }
 
 h1 {
-  margin-bottom: 24px;
+  margin-bottom: 32px; /* More whitespace around it make it stand out */
   font-size: 44px;
   line-height: 1.1; /* For big text go below 1.5, adjust on Inspector */
   letter-spacing: -1px; /* Makes big text look more natural */
@@ -130,7 +130,7 @@ h1 {
   stroke: #087f5b; /* Color */
   width: 32px; /* Designed to be used in 24px */
   height: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 24px; /* Law of proximity */
 }
 
 .features-title {
@@ -165,10 +165,15 @@ h1 {
 .testimonial-text {
   font-style: italic;
   margin-bottom: 24px;
+  color: #e6fcf5;
 
   /* "Normal text" */
   font-size: 18px;
   line-height: 1.7;
+}
+
+.testimonial-author {
+  color: #c3fae8;
 }
 
 /* CHAIRS */
@@ -188,7 +193,7 @@ h1 {
 }
 
 .chair-box {
-  padding: 24px;
+  padding: 32px;
 }
 
 h3 {
@@ -198,14 +203,14 @@ h3 {
 
 .chair-details {
   list-style: none;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 .chair-details li {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .chair-details li:last-child {
@@ -220,6 +225,7 @@ h3 {
 
 .chair-price {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 20px;
 }
